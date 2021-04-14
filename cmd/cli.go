@@ -15,9 +15,9 @@ type commands struct {
 
 // getCommands initialize cli and get command of user.
 func getCommands(_ context.Context) (*commands, error) {
-	roundCount := flag.Int("roundCount", 10000, "count of round wander in the world")
+	roundCount := flag.Int("rounds", 10000, "count of round wander in the world")
 	alienCount := flag.Int("aliens", 3, "count of aliens")
-	dataDir := flag.String("dataDir", "./world.txt", "dataDir read world data")
+	dataDir := flag.String("data-dir", "testdata/world.txt", "dataDir read world data")
 	flag.Parse()
 
 	if roundCount == nil || *roundCount <= 0 {

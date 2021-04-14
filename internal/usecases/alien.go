@@ -79,7 +79,7 @@ func (u *UseCases) randomCity(_ context.Context) *structs.City {
 }
 
 func (u *UseCases) checkDestroyedCity(ctx context.Context, city *structs.City) {
-	if len(city.Aliens) == 2 {
+	if len(city.Aliens) == AlienFightCondition {
 		aliensName := make([]string, 2)
 
 		var i int

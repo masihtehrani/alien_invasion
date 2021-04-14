@@ -48,7 +48,9 @@ func oppositeDirections(_ context.Context, direction string) string {
 }
 
 func (u *UseCases) printWorld() []string {
-	var result []string
+	result := make([]string, len(u.worlds))
+
+	var i int
 
 	for _, v := range u.worlds {
 		var links []string
@@ -57,7 +59,9 @@ func (u *UseCases) printWorld() []string {
 			links = append(links, k+"="+v.Name)
 		}
 
-		result = append(result, v.Name+" "+strings.Join(links, " "))
+		result[i] = v.Name + " " + strings.Join(links, " ")
+
+		i++
 	}
 
 	return result
