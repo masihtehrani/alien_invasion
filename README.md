@@ -48,12 +48,12 @@ Feel free to make assumptions (for example, that the city names will never
 contain numeric characters), but please add comments or assertions describing
 the assumptions you are making.
 
-###Run project
+### Run project
 `
 go run ./cmd/... -rounds=10000 -aliens=3 -data-dir=testdata/world.txt
 `
 
-###General Overview
+### General Overview
 ![alt text](diagram.png)
 uml created with [goplantuml](github.com/jfeliu007/goplantuml/cmd/goplantuml) and command exist in MakeFile
 
@@ -61,7 +61,7 @@ uml created with [goplantuml](github.com/jfeliu007/goplantuml/cmd/goplantuml) an
 Private application and library code. This is the code you don't want others importing in their applications or libraries. Note that this layout pattern is enforced by the Go compiler itself. See the [Go 1.4](https://golang.org/doc/go1.4#internalpackages) for more details. Note that you are not limited to the top level internal directory. You can have more than one internal directory at any level of your project tree.
 
 
-###Structure Project
+### Structure Project
 try to use best structure project. because I have experience work with [clean architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 ) choose for this project. clean architecture has five major principles I follow in this project.
 
@@ -72,12 +72,7 @@ try to use best structure project. because I have experience work with [clean ar
 5.  Independent of any external agency. In fact your business rules simply don’t know anything at all about the outside world.
 
 
-
-
-
-
-
-###Todo
+### Todo
 - [X] read file (line by line)
 
 - [X] create world (each city and directions)
