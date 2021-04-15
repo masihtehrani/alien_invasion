@@ -9,6 +9,7 @@ import (
 	"github.com/masihtehrani/alien_invasion/internal/entities/structs"
 )
 
+// choseAlienName can create unlimited name for aliens.
 func choseAlienName(_ context.Context, i int) string {
 	names := [10]string{
 		"Liam",
@@ -31,6 +32,7 @@ func choseAlienName(_ context.Context, i int) string {
 	return name
 }
 
+//  createAliens fill aliens in useCases alien structure.
 func (u *UseCases) createAliens(ctx context.Context) {
 	for i := 0; i < u.config.alienCount; i++ {
 		newAlien := structs.Alien{
@@ -40,6 +42,7 @@ func (u *UseCases) createAliens(ctx context.Context) {
 	}
 }
 
+// assignAliensToCities assign randomly aliens to cities.
 func (u *UseCases) assignAliensToCities(ctx context.Context) {
 	for key := range u.aliens {
 		if len(u.worlds) == 0 {
@@ -58,6 +61,7 @@ func (u *UseCases) assignAliensToCities(ctx context.Context) {
 	}
 }
 
+// randomCity return random city.
 func (u *UseCases) randomCity(_ context.Context) *structs.City {
 	var i int
 
@@ -78,6 +82,7 @@ func (u *UseCases) randomCity(_ context.Context) *structs.City {
 	return nil
 }
 
+// checkDestroyedCity check two aliens exist in this remove city.
 func (u *UseCases) checkDestroyedCity(ctx context.Context, city *structs.City) {
 	if len(city.Aliens) == AlienFightCondition {
 		aliensName := make([]string, 2)

@@ -4,6 +4,7 @@ import (
 	"fmt"
 )
 
+// define default error system.
 var (
 	ErrAlienCountEmpty    = err(1001, "alien count must be more than 0")
 	ErrRoundCountEmpty    = err(1002, "round count must be more than 0")
@@ -11,6 +12,7 @@ var (
 	ErrCantFindRandomCity = err(1004, "can't find random city")
 )
 
+// Error custom error structure.
 type Error struct {
 	Err  string
 	Code int

@@ -8,6 +8,7 @@ import (
 	"github.com/masihtehrani/alien_invasion/internal/entities/structs"
 )
 
+// MoveAliens each round move all aliens in cities. trap mean one alien does not have any way for exist city.
 func (u *UseCases) MoveAliens(ctx context.Context) {
 	for _, alien := range u.aliens {
 		if len(u.worlds) == 0 {
@@ -23,6 +24,7 @@ func (u *UseCases) MoveAliens(ctx context.Context) {
 	}
 }
 
+// move alien randomly move in cities.
 func (u *UseCases) move(alien *structs.Alien) {
 	city := u.randomLink(alien.City)
 	alien.City = city
@@ -32,6 +34,7 @@ func (u *UseCases) move(alien *structs.Alien) {
 	delete(u.aliens, alien.Name)
 }
 
+// randomLink find randomly way from city to another city.
 func (u *UseCases) randomLink(city *structs.City) *structs.City {
 	var i int
 

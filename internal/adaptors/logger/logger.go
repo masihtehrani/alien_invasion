@@ -13,6 +13,7 @@ type Logger struct {
 	Error   *log.Logger
 }
 
+// New create logger golang standard library.
 func New(_ context.Context, traceHandle, infoHandle, warningHandle, errorHandle io.Writer) Logger {
 	var Logger Logger
 	Logger.Trace = log.New(traceHandle, "TRACE: ", log.Ldate|log.Ltime|log.Lshortfile)

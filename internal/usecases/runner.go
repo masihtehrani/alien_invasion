@@ -5,6 +5,7 @@ import (
 	"fmt"
 )
 
+// Runner it's just exposed method and call all logic with this method.
 func (u *UseCases) Runner(ctx context.Context) error {
 	textWorlds, err := u.dataStore.GetDataWorld(ctx)
 	if err != nil {

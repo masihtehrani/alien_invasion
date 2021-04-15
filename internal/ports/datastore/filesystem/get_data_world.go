@@ -7,6 +7,7 @@ import (
 	"os"
 )
 
+// GetDataWorld get data from sile system and return data.
 func (d *DataStore) GetDataWorld(ctx context.Context) ([]string, error) {
 	f, err := os.Open(d.dataDir)
 	if err != nil {

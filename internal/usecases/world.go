@@ -7,6 +7,7 @@ import (
 	"github.com/masihtehrani/alien_invasion/internal/entities/structs"
 )
 
+// createWorlds create world with get data from entry.
 func (u *UseCases) createWorlds(ctx context.Context, textWorlds []string) {
 	for i := range textWorlds {
 		textCities := strings.Split(textWorlds[i], " ")
@@ -36,6 +37,7 @@ func (u *UseCases) createWorlds(ctx context.Context, textWorlds []string) {
 	}
 }
 
+// oppositeDirections get one direct and return opposite.
 func oppositeDirections(_ context.Context, direction string) string {
 	compass := map[string]string{
 		"north": "south",
@@ -47,6 +49,7 @@ func oppositeDirections(_ context.Context, direction string) string {
 	return compass[direction]
 }
 
+// printWorld read all world and return printable data.
 func (u *UseCases) printWorld() []string {
 	result := make([]string, len(u.worlds))
 

@@ -10,6 +10,7 @@ type DataStore struct {
 	dataDir string
 }
 
+// New filled config data related data store and return implementation data store.
 func New(_ context.Context, dataDir string) interfaces.IDataStore {
 	return &DataStore{dataDir: dataDir}
 }

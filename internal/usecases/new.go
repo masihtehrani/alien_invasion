@@ -26,6 +26,7 @@ type config struct {
 	alienCount int
 }
 
+// New get config from entry and define to use cases structure and return implementation of IUseCases.
 func New(_ context.Context, roundCount int, alienCount int, logger *logger.Logger,
 	dataStore interfaces.IDataStore) interfaces.IUseCases {
 	return &UseCases{
