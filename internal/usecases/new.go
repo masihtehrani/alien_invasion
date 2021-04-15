@@ -13,7 +13,7 @@ const AlienFightCondition = 2
 type UseCases struct {
 	config config
 
-	logger logger.Logger
+	logger *logger.Logger
 
 	dataStore interfaces.IDataStore
 
@@ -26,7 +26,7 @@ type config struct {
 	alienCount int
 }
 
-func New(_ context.Context, roundCount int, alienCount int, logger logger.Logger,
+func New(_ context.Context, roundCount int, alienCount int, logger *logger.Logger,
 	dataStore interfaces.IDataStore) interfaces.IUseCases {
 	return &UseCases{
 		config: config{
@@ -35,7 +35,7 @@ func New(_ context.Context, roundCount int, alienCount int, logger logger.Logger
 		},
 		logger:    logger,
 		dataStore: dataStore,
-		worlds:    make(map[string]*structs.City, 3),
+		worlds:    make(map[string]*structs.City),
 		aliens:    make(map[string]structs.Alien),
 	}
 }

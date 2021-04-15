@@ -25,7 +25,7 @@ func main() {
 
 	iDataStore := filesystem.New(ctx, commands.dataDir)
 
-	iUseCases := usecases.New(ctx, commands.roundCount, commands.alienCount, logger, iDataStore)
+	iUseCases := usecases.New(ctx, commands.roundCount, commands.alienCount, &logger, iDataStore)
 
 	err = iUseCases.Runner(ctx)
 	if err != nil {
