@@ -52,7 +52,6 @@ linters:
     - golint
     - gomnd
     - goprintffuncname
-    - gosec
     - gosimple
     - govet
     - ineffassign
@@ -83,7 +82,6 @@ linters:
     - errorlint
     - exhaustive
     - exportloopref
-    - forbidigo
     - gci
     - gofumpt
     - goheader

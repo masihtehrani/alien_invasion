@@ -22,9 +22,13 @@ func getCommands(_ context.Context) (*commands, error) {
 
 	if roundCount == nil || *roundCount <= 0 {
 		return nil, errors.ErrRoundCountEmpty
-	} else if alienCount == nil || *alienCount <= 0 {
+	}
+
+	if alienCount == nil || *alienCount <= 0 {
 		return nil, errors.ErrAlienCountEmpty
-	} else if dataDir == nil || *dataDir == "" {
+	}
+
+	if dataDir == nil || *dataDir == "" {
 		return nil, errors.ErrWorldFileEmpty
 	}
 

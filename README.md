@@ -94,3 +94,6 @@ try to use best structure project. because I have experience work with [clean ar
 - [X] log print destroy city is `Bar has been destroyed by alien 10 and alien 34!`
 
 - [X] after finished print city name city same the read start file
+
+### Lint
+this code linted by [lint](https://golangci-lint.run/) v.1.39.0
